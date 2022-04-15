@@ -1,4 +1,4 @@
-public class Etudiant{
+public class Etudiant implements Comparable<Etudiant>{
     int id;
     String nom;
     double note;
@@ -16,5 +16,14 @@ public class Etudiant{
         if(!(obj instanceof Etudiant)) return false;
         return ((Etudiant)obj).id==id;
     }
+    @Override
+    public int compareTo(Etudiant e) {
+        if(e.note==note) return 0;
+        if(e.note>note) return 1;
+        return -1;
+
+    }
+
+    
     
 }
